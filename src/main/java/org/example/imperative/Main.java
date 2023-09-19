@@ -34,6 +34,7 @@ public class Main {
         System.out.println("Declarative Approach ==========");
         List<Person> listOfPupil = student.stream().filter(pupil -> pupil.gender.equals(FEMALE))
                 .toList();
+        //listOfPupil.forEach(person -> System.out.println(person.name));
         listOfPupil.forEach(System.out::println);
 
     }
