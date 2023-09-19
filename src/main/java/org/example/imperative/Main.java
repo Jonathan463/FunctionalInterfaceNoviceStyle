@@ -2,6 +2,7 @@ package org.example.imperative;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.example.imperative.Main.Gender.FEMALE;
 import static org.example.imperative.Main.Gender.MALE;
@@ -17,6 +18,7 @@ public class Main {
                 );
 
         //Imperative approach
+        System.out.println("Imperative approach ==========");
         List<Person> females = new ArrayList<>();
         for(Person person : student){
             if(person.gender.equals(FEMALE)){
@@ -28,6 +30,12 @@ public class Main {
         for(Person female : females){
             System.out.println(female);
         }
+        //Declarative Approach
+        System.out.println("Declarative Approach ==========");
+        List<Person> listOfPupil = student.stream().filter(pupil -> pupil.gender.equals(FEMALE))
+                .toList();
+        listOfPupil.forEach(System.out::println);
+
     }
 
     public static class Person{
