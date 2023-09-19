@@ -17,16 +17,16 @@ public class Main {
                 );
 
         //Imperative approach
-        List<Person> female = new ArrayList<>();
+        List<Person> females = new ArrayList<>();
         for(Person person : student){
             if(person.gender.equals(FEMALE)){
-                female.add(person);
+                females.add(person);
             }
 
         }
 
-        for(Person females : female){
-            System.out.println(females);
+        for(Person female : females){
+            System.out.println(female);
         }
     }
 
