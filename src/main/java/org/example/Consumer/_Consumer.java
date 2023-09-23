@@ -1,5 +1,6 @@
 package org.example.Consumer;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class _Consumer {
@@ -22,10 +23,13 @@ public class _Consumer {
 
     //Functional Interface Way
     static Consumer<Customer> customerConsumer = customer -> System.out.println("You are welcome "+customer.customerName +"With registration number "+customer.customerPhoneNumber);
+
+    static BiConsumer<Customer, Boolean> customerBooleanBiConsumer = (customer, showPhoneNumber) -> System.out.println("Good evening "+customer.customerName+" "+(showPhoneNumber ? customer.customerPhoneNumber : "###########"));
     public static void main(String[] args) {
         Customer customer = new Customer("Jonathan","08030496039");
         greetCustomer(customer);
 
         customerConsumer.accept(customer);
+        customerBooleanBiConsumer.accept(customer,true);
     }
 }
